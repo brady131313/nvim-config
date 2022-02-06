@@ -97,6 +97,11 @@ telescope.setup {
       -- filetypes whitelist
       filetypes = {"png", "webp", "jpg", "jpeg"},
       find_cmd = "rg"
+    },
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {}
     }
   },
 }
+
+telescope.load_extension('ui-select')

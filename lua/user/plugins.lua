@@ -56,6 +56,9 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use("akinsho/toggleterm.nvim")
 	use("folke/which-key.nvim")
+  use("simrat39/rust-tools.nvim")
+  use("folke/trouble.nvim")
+  use("nvim-telescope/telescope-ui-select.nvim")
 
 	-- colorschemes
 	use("rebelot/kanagawa.nvim")
