@@ -1,3 +1,5 @@
+DATA_PATH = vim.fn.stdpath('data')
+
 local opts = {
     tools = { -- rust-tools options
         -- Automatically set inlay hints (type hints)
@@ -108,6 +110,8 @@ local opts = {
         -- standalone file support
         -- setting it to false may improve startup time
         standalone = true,
+        on_attach = require("user.lsp.handlers").on_attach,
+        cmd = { DATA_PATH .. "/lsp_servers/rust/rust-analyzer" }
     }, -- rust-analyer options
 
     -- debugging stuff
@@ -121,4 +125,4 @@ local opts = {
 }
 
 require('rust-tools').setup(opts)
-require('rust-tools.inlay_hints').set_inlay_hints()
+
