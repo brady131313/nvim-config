@@ -161,9 +161,9 @@ local mappings = {
   },
   t = {
     name = "Trouble",
-    t = { "<cmd>Trouble<cr>", "Trouble" },
-    w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace" },
-    d = { "<cmd>Trouble document_diagnostics<cr>", "Document" },
+    t = { "<cmd>TroubleToggle<cr>", "Trouble" },
+    w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace" },
+    d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document" },
   },
   T = {
     name = "Terminal",
