@@ -15,7 +15,7 @@ toggleterm.setup({
 	persist_size = true,
 	direction = "horizontal",
 	close_on_exit = true,
-	shell = "/usr/local/bin/fish",
+	shell = "/usr/bin/fish",
 	float_opts = {
 		border = "curved",
 		winblend = 0,
