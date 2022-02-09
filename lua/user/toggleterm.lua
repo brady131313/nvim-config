@@ -3,8 +3,13 @@ if not status_ok then
 	return
 end
 
+local shell = "/usr/bin/fish"
+if vim.loop.os_uname().sysname == "Darwin" then
+  shell = "/usr/local/bin/fish"
+end
+
 toggleterm.setup({
-	size = 20,
+	size = 15,
 	open_mapping = [[<c-\>]],
 	hide_numbers = true,
 	shade_filetypes = {},
@@ -15,7 +20,7 @@ toggleterm.setup({
 	persist_size = true,
 	direction = "horizontal",
 	close_on_exit = true,
-	shell = "/usr/bin/fish",
+	shell = shell,
 	float_opts = {
 		border = "curved",
 		winblend = 0,
