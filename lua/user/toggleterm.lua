@@ -5,7 +5,7 @@ end
 
 local shell = "/usr/bin/fish"
 if vim.loop.os_uname().sysname == "Darwin" then
-  shell = "/usr/local/bin/fish"
+  shell = "/usr/local/Cellar/fish/3.3.1/bin/fish"
 end
 
 toggleterm.setup({
