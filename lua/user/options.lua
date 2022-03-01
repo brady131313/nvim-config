@@ -1,5 +1,6 @@
 -- :help options
 vim.opt.backup = false -- creates a backup file
+vim.opt.hidden = true
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 2 -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
@@ -37,12 +38,13 @@ vim.opt.guifont = "JetBrainsMono Nerd Font Mono" -- the font used in graphical n
 
 local shell = "/usr/bin/bash"
 if vim.loop.os_uname().sysname == "Darwin" then
-  shell = "/usr/bash"
+  shell = "/bin/bash"
 end
 
 vim.opt.shell = shell
 
 vim.opt.shortmess:append("c")
+
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
