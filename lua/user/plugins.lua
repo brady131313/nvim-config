@@ -1,5 +1,10 @@
 local fn = vim.fn
 
+local in_neovide = false
+if vim.g.neovide then
+  in_neovide = true
+end
+
 -- Automatically install packer
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -56,9 +61,15 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use("akinsho/toggleterm.nvim")
 	use("folke/which-key.nvim")
-  use("simrat39/rust-tools.nvim")
-  use("folke/trouble.nvim")
-  use("nvim-telescope/telescope-ui-select.nvim")
+	use("simrat39/rust-tools.nvim")
+	use("folke/trouble.nvim")
+	use("ray-x/lsp_signature.nvim")
+	use({
+		"j-hui/fidget.nvim",
+		config = function()
+			require("fidget").setup({})
+		end,
+	})
 
 	-- colorschemes
 	use("rebelot/kanagawa.nvim")
@@ -83,6 +94,11 @@ return packer.startup(function(use)
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
+	use("nvim-telescope/telescope-ui-select.nvim")
+  use({
+    "nvim-telescope/telescope-fzf-native.nvim",
+    run = 'make'
+  })
 
 	-- Treesitter
 	use({
