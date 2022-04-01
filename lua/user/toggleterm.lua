@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-local shell = "/usr/bin/fish"
+local shell = "/usr/bin/zsh"
 if vim.loop.os_uname().sysname == "Darwin" then
   shell = "/usr/local/Cellar/fish/3.3.1/bin/fish"
 end

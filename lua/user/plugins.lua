@@ -61,7 +61,12 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use("akinsho/toggleterm.nvim")
 	use("folke/which-key.nvim")
-	use("simrat39/rust-tools.nvim")
+  use("ellisonleao/glow.nvim")
+	-- use("simrat39/rust-tools.nvim")
+  use({
+    "matze/rust-tools.nvim",
+    branch = "fix-upstreamed-inlayhints"
+  })
 	use("folke/trouble.nvim")
 	use("ray-x/lsp_signature.nvim")
 	use({
@@ -70,6 +75,14 @@ return packer.startup(function(use)
 			require("fidget").setup({})
 		end,
 	})
+  use({
+    "karb94/neoscroll.nvim",
+    config = function()
+      if not in_neovide then
+        require("neoscroll").setup()
+      end
+    end
+  })
 
 	-- colorschemes
 	use("rebelot/kanagawa.nvim")

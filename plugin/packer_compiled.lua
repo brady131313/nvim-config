@@ -125,6 +125,11 @@ _G.packer_plugins = {
     path = "/home/brady/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["glow.nvim"] = {
+    loaded = true,
+    path = "/home/brady/.local/share/nvim/site/pack/packer/start/glow.nvim",
+    url = "https://github.com/ellisonleao/glow.nvim"
+  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/home/brady/.local/share/nvim/site/pack/packer/start/impatient.nvim",
@@ -149,6 +154,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/brady/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["neoscroll.nvim"] = {
+    config = { "\27LJ\2\nE\0\0\3\1\3\0\t-\0\0\0\14\0\0\0X\0\5€6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\0\0\nsetup\14neoscroll\frequire\0" },
+    loaded = true,
+    path = "/home/brady/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -218,7 +229,7 @@ _G.packer_plugins = {
   ["rust-tools.nvim"] = {
     loaded = true,
     path = "/home/brady/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
-    url = "https://github.com/simrat39/rust-tools.nvim"
+    url = "https://github.com/matze/rust-tools.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
@@ -263,6 +274,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: neoscroll.nvim
+time([[Config for neoscroll.nvim]], true)
+try_loadstring("\27LJ\2\nE\0\0\3\1\3\0\t-\0\0\0\14\0\0\0X\0\5€6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\0\0\nsetup\14neoscroll\frequire\0", "config", "neoscroll.nvim")
+time([[Config for neoscroll.nvim]], false)
 -- Config for: fidget.nvim
 time([[Config for fidget.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
