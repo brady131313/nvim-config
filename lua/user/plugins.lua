@@ -62,12 +62,9 @@ return packer.startup(function(use)
 	use("akinsho/toggleterm.nvim")
 	use("folke/which-key.nvim")
   use("ellisonleao/glow.nvim")
-	-- use("simrat39/rust-tools.nvim")
-  use({
-    "matze/rust-tools.nvim",
-    branch = "fix-upstreamed-inlayhints"
-  })
+	use("simrat39/rust-tools.nvim")
 	use("folke/trouble.nvim")
+  use("SidOfc/mkdx")
 	use("ray-x/lsp_signature.nvim")
 	use({
 		"j-hui/fidget.nvim",

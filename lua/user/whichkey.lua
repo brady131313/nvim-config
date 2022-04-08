@@ -82,7 +82,6 @@ local mappings = {
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	["G"] = { "<cmd>Glow<cr>", "Markdown Preview" },
 
 	f = {
 		name = "Telescope",
@@ -100,6 +99,12 @@ local mappings = {
     r = { "<cmd>lua require('telescope.builtin').lsp_references()<cr>", "LSP References" },
     g = { "<cmd>lua require('telescope.builtin').git_files()<cr>", "Git find files" }
 	},
+
+  m = {
+    name = "Markdown",
+    G = {"<cmd>Glow<cr>", "Preview"},
+    c = {"<Plug>mkdx-checkbox-next-n<cr>", "Checkbox state"},
+  },
 
 	p = {
 		name = "Packer",
