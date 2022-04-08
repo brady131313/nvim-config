@@ -115,6 +115,11 @@ _G.packer_plugins = {
     path = "/home/brady/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
   },
+  ["filetype.nvim"] = {
+    loaded = true,
+    path = "/home/brady/.local/share/nvim/site/pack/packer/start/filetype.nvim",
+    url = "https://github.com/nathom/filetype.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/brady/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -140,6 +145,11 @@ _G.packer_plugins = {
     path = "/home/brady/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["indent-o-matic"] = {
+    loaded = true,
+    path = "/home/brady/.local/share/nvim/site/pack/packer/start/indent-o-matic",
+    url = "https://github.com/Darazaki/indent-o-matic"
+  },
   ["kanagawa.nvim"] = {
     loaded = true,
     path = "/home/brady/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
@@ -161,9 +171,12 @@ _G.packer_plugins = {
     url = "https://github.com/SidOfc/mkdx"
   },
   ["neoscroll.nvim"] = {
-    config = { "\27LJ\2\nE\0\0\3\1\3\0\t-\0\0\0\14\0\0\0X\0\5€6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\0\0\nsetup\14neoscroll\frequire\0" },
-    loaded = true,
-    path = "/home/brady/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    cond = { "\27LJ\2\n\30\0\0\1\0\1\0\0036\0\0\0\19\0\0\0L\0\2\0\15in_neovide\0" },
+    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14neoscroll\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = true,
+    path = "/home/brady/.local/share/nvim/site/pack/packer/opt/neoscroll.nvim",
     url = "https://github.com/karb94/neoscroll.nvim"
   },
   ["null-ls.nvim"] = {
@@ -283,10 +296,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for fidget.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
 time([[Config for fidget.nvim]], false)
--- Config for: neoscroll.nvim
-time([[Config for neoscroll.nvim]], true)
-try_loadstring("\27LJ\2\nE\0\0\3\1\3\0\t-\0\0\0\14\0\0\0X\0\5€6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\0\0\nsetup\14neoscroll\frequire\0", "config", "neoscroll.nvim")
-time([[Config for neoscroll.nvim]], false)
+-- Conditional loads
+time([[Conditional loading of neoscroll.nvim]], true)
+  require("packer.load")({"neoscroll.nvim"}, {}, _G.packer_plugins)
+time([[Conditional loading of neoscroll.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

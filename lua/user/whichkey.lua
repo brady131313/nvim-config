@@ -78,6 +78,7 @@ local opts = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 
+
 local mappings = {
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
@@ -90,21 +91,21 @@ local mappings = {
 			"Buffers",
 		},
 		f = {
-			"<cmd>lua require('telescope.builtin').find_files()<cr>",
+			"<cmd>lua require('user.whichkey').project_files()<cr>",
 			"Find files",
 		},
-		F = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Find Text" },
+		g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Live grep" },
 		m = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Find Media" },
-    d = { "<cmd>lua require('telescope.builtin').diagnostics()<cr>", "Diagnostics" },
-    r = { "<cmd>lua require('telescope.builtin').lsp_references()<cr>", "LSP References" },
-    g = { "<cmd>lua require('telescope.builtin').git_files()<cr>", "Git find files" }
+		d = { "<cmd>lua require('telescope.builtin').diagnostics()<cr>", "Diagnostics" },
+		r = { "<cmd>lua require('telescope.builtin').lsp_references()<cr>", "LSP References" },
+		-- g = { "<cmd>lua require('telescope.builtin').git_files()<cr>", "Git find files" }
 	},
 
-  m = {
-    name = "Markdown",
-    G = {"<cmd>Glow<cr>", "Preview"},
-    c = {"<Plug>mkdx-checkbox-next-n<cr>", "Checkbox state"},
-  },
+	m = {
+		name = "Markdown",
+		G = { "<cmd>Glow<cr>", "Preview" },
+		c = { "<Plug>mkdx-checkbox-next-n<cr>", "Checkbox state" },
+	},
 
 	p = {
 		name = "Packer",
@@ -195,3 +196,15 @@ local mappings = {
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
+
+local M = {}
+
+M.project_files = function()
+	local opts = {}
+	local ok = pcall(require("telescope.builtin").git_files, opts)
+	if not ok then
+		require("telescope.builtin").find_files(opts)
+	end
+end
+
+return M

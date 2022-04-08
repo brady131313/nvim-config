@@ -1,8 +1,12 @@
 local fn = vim.fn
 
-local in_neovide = false
+in_neovide = false
 if vim.g.neovide then
-  in_neovide = true
+	in_neovide = true
+end
+
+function not_in_neovide()
+	return not in_neovide
 end
 
 -- Automatically install packer
@@ -59,12 +63,14 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
+	use("Darazaki/indent-o-matic")
 	use("akinsho/toggleterm.nvim")
 	use("folke/which-key.nvim")
-  use("ellisonleao/glow.nvim")
+	use("ellisonleao/glow.nvim")
 	use("simrat39/rust-tools.nvim")
 	use("folke/trouble.nvim")
-  use("SidOfc/mkdx")
+	use("SidOfc/mkdx")
+	use("nathom/filetype.nvim")
 	use("ray-x/lsp_signature.nvim")
 	use({
 		"j-hui/fidget.nvim",
@@ -72,14 +78,13 @@ return packer.startup(function(use)
 			require("fidget").setup({})
 		end,
 	})
-  use({
-    "karb94/neoscroll.nvim",
-    config = function()
-      if not in_neovide then
-        require("neoscroll").setup()
-      end
-    end
-  })
+	use({
+		"karb94/neoscroll.nvim",
+		config = function()
+			require("neoscroll").setup()
+		end,
+		cond = not_in_neovide,
+	})
 
 	-- colorschemes
 	use("rebelot/kanagawa.nvim")
@@ -105,10 +110,10 @@ return packer.startup(function(use)
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("nvim-telescope/telescope-ui-select.nvim")
-  use({
-    "nvim-telescope/telescope-fzf-native.nvim",
-    run = 'make'
-  })
+	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		run = "make",
+	})
 
 	-- Treesitter
 	use({
