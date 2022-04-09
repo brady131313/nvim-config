@@ -72,6 +72,7 @@ return packer.startup(function(use)
 	use("SidOfc/mkdx")
 	use("nathom/filetype.nvim")
 	use("ray-x/lsp_signature.nvim")
+	use("simrat39/symbols-outline.nvim")
 	use({
 		"j-hui/fidget.nvim",
 		config = function()

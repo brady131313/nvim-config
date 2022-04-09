@@ -81,6 +81,7 @@ local opts = {
 
 local mappings = {
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+	["o"] = { "<cmd>SymbolsOutline<cr>", "Symbols" },
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 
