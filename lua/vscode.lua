@@ -8,6 +8,8 @@ vim.g.maplocalleader = " "
 local opts = { silent = true }
 keymap("n", "<S-l>", ":tabn<CR>", opts)
 keymap("n", "<S-h>", ":tabp<CR>", opts)
+keymap("n", "<Space>ff", ":find<CR>", opts)
+keymap("n", "<Space>c", ":quit<CR>", opts)
 
 local opts = { silent = true, noremap = true }
 keymap("n", "<C-j>", [[<Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>]], opts)
