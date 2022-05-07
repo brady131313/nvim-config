@@ -33,6 +33,7 @@ vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would sh
 vim.opt.wrap = true -- display lines as one long line
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
+vim.opt.laststatus = 3
 vim.opt.guifont = "JetBrainsMono Nerd Font Mono" -- the font used in graphical neovim applications
 
 
