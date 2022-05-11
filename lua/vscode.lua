@@ -7,10 +7,14 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Better window controls
 keymap("n", "<C-j>", [[<cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<cr>]], opts)
 keymap("n", "<C-k>", [[<cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<cr>]], opts)
 keymap("n", "<C-h>", [[<cmd>call VSCodeNotify('workbench.action.focusRightGroup')<cr>]], opts)
 keymap("n", "<C-l>", [[<cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<cr>]], opts)
+
+-- toggle sidebar
+keymap("n", "<Space>e", [[<cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<cr>]], opts)
 
 local opts = { silent = true }
 keymap("n", "<S-l>", ":tabn<CR>", opts)
