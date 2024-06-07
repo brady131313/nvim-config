@@ -79,4 +79,12 @@ return {
 		opts = {},
 		cmd = "Trouble",
 	},
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		opts = {
+			open_mapping = [[<C-\>]],
+			insert_mappings = false,
+		},
+	},
 }

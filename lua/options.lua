@@ -8,6 +8,7 @@ local options = {
 	-- case insensitive searching unless capital letter present
 	ignorecase = true,
 	smartcase = true,
+	mouse = "a",
 
 	signcolumn = "yes",
 

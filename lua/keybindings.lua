@@ -21,3 +21,11 @@ keymap("n", "gb", ":BufferLinePick<CR>", { silent = true })
 keymap("n", "<leader>x", ":Bdelete<CR>", { silent = true })
 
 keymap("n", "<leader>d", "<cmd>Trouble diagnostics toggle<cr>")
+
+function _G.set_terminal_keymaps()
+	local opts = { buffer = 0 }
+	keymap("t", "<esc>", [[<C-\><C-n>]], opts)
+	keymap("t", "jk", [[<C-\><C-n>]], opts)
+end
+
+vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
