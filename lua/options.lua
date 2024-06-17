@@ -4,7 +4,6 @@ vim.g.maplocalleader = " "
 local options = {
 	number = true,
 	clipboard = "unnamedplus",
-	undofile = true,
 	-- case insensitive searching unless capital letter present
 	ignorecase = true,
 	smartcase = true,
@@ -16,13 +15,24 @@ local options = {
 	splitbelow = true,
 
 	scrolloff = 10,
-	hlsearch = true, -- highlight on search
+	hlsearch = false,
+	incsearch = true,
 
 	shiftwidth = 4,
 	tabstop = 4,
+	softtabstop = 4,
+	expandtab = true,
 
 	background = "dark",
 	termguicolors = true,
+	wrap = false,
+
+	swapfile = false,
+	backup = false,
+	undodir = vim.fn.stdpath("data") .. "/undo",
+	undofile = true,
+
+	updatetime = 50,
 }
 
 for option, value in pairs(options) do

@@ -1,3 +1,32 @@
+local on_attach = function(client, bufnr)
+	local opts = { buffer = bufnr, remap = false }
+
+	vim.keymap.set("n", "gd", function()
+		vim.lsp.buf.definition()
+	end, opts)
+	vim.keymap.set("n", "K", function()
+		vim.lsp.buf.hover()
+	end, opts)
+	vim.keymap.set("n", "[d", function()
+		vim.diagnostic.goto_prev()
+	end, opts)
+	vim.keymap.set("n", "]d", function()
+		vim.diagnostic.goto_prev()
+	end, opts)
+	vim.keymap.set("n", "ca", function()
+		vim.lsp.buf.code_action()
+	end, opts)
+	vim.keymap.set("n", "gr", function()
+		vim.lsp.buf.references()
+	end, opts)
+	vim.keymap.set("n", "rn", function()
+		vim.lsp.buf.rename()
+	end, opts)
+	vim.keymap.set("n", "<leader>fm", function()
+		vim.lsp.buf.format()
+	end)
+end
+
 local servers = {
 	lua_ls = {},
 	tsserver = {},
@@ -12,6 +41,7 @@ local servers = {
 			},
 		},
 	},
+	rust_analyzer = {},
 }
 
 local server_names = {}
@@ -43,6 +73,7 @@ return {
 
 			local default_config = {
 				capabilities = capabilities,
+				on_attach = on_attach,
 			}
 
 			for server, config in pairs(servers) do

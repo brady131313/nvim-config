@@ -9,7 +9,14 @@ return {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-		config = true,
+		opts = {
+			sync_root_with_cwd = true,
+			respect_buf_cwd = true,
+			update_focused_file = {
+				enable = true,
+				update_cwd = true,
+			},
+		},
 	},
 	{
 		"diegoulloao/neofusion.nvim",
@@ -40,6 +47,7 @@ return {
 	},
 	{
 		"folke/noice.nvim",
+		enabled = false,
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
@@ -86,5 +94,10 @@ return {
 			open_mapping = [[<C-\>]],
 			insert_mappings = false,
 		},
+	},
+	{
+		"smoka7/hop.nvim",
+		version = "2.7",
+		config = true,
 	},
 }

@@ -19,6 +19,8 @@ return {
 				"html",
 				"css",
 				"regex",
+				"toml",
+				"rust",
 			},
 			sync_install = false,
 			highlight = { enable = true },
