@@ -30,9 +30,12 @@ end
 local servers = {
 	lua_ls = {},
 	tsserver = {},
-	elixirls = {
-		cmd = { vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/language_server.sh" },
-	},
+	-- elixirls = {
+	-- 	cmd = { vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/language_server.sh" },
+	-- },
+	-- lexical = {
+	-- 	cmd = { "lexical" },
+	-- },
 	tailwindcss = {
 		init_options = {
 			userLanguages = {
@@ -48,6 +51,19 @@ local server_names = {}
 for server, _ in pairs(servers) do
 	table.insert(server_names, server)
 end
+
+-- add nextls after because mason lsp_config doesn't support it
+servers["nextls"] = {
+	cmd = { "nextls", "--stdio" },
+	init_options = {
+		extensions = {
+			credo = { enable = true },
+		},
+		experimental = {
+			completions = { enable = true },
+		},
+	},
+}
 
 return {
 	{
