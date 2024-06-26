@@ -27,7 +27,7 @@ keymap("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", {})
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>", {})
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", {})
 keymap("n", "<leader>fp", function()
-	require("telescope").extensions.projects.projects()
+    require("telescope").extensions.projects.projects()
 end, {})
 
 keymap("n", "H", ":BufferLineCyclePrev<CR>", { silent = true })
@@ -42,10 +42,14 @@ keymap("", "F", "<cmd>HopChar1CurrentLineBC<CR>")
 keymap("", "s", "<cmd>HopChar1AC<CR>")
 keymap("", "S", "<cmd>HopChar1BC<CR>")
 
+keymap("n", "<leader>fm", function()
+    require("conform").format { async = true, lsp_fallback = true }
+end)
+
 function _G.set_terminal_keymaps()
-	local opts = { buffer = 0 }
-	keymap("t", "<esc>", [[<C-\><C-n>]], opts)
-	keymap("t", "jk", [[<C-\><C-n>]], opts)
+    local opts = { buffer = 0 }
+    keymap("t", "<esc>", [[<C-\><C-n>]], opts)
+    keymap("t", "jk", [[<C-\><C-n>]], opts)
 end
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
