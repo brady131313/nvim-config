@@ -3,9 +3,14 @@ return {
     build = ":TSUpdate",
     dependencies = {
         "RRethy/nvim-treesitter-endwise",
+        "windwp/nvim-ts-autotag",
     },
     config = function()
         local configs = require("nvim-treesitter.configs")
+
+        require('nvim-ts-autotag').setup({
+            enable = true
+        })
 
         configs.setup({
             ensure_installed = {
@@ -16,12 +21,14 @@ return {
                 "heex",
                 "javascript",
                 "typescript",
+                "tsx",
                 "html",
                 "css",
                 "regex",
                 "toml",
                 "rust",
-                "fish"
+                "fish",
+                "svelte"
             },
             sync_install = false,
             highlight = { enable = true },

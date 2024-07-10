@@ -5,6 +5,9 @@ return {
             lua = { "stylua" },
             elixir = { "mix" },
             heex = { "mix" },
+            typescript = { "prettier" },
+            javascript = { "prettier" },
+            typescriptreact = { "prettier" },
             ["*"] = { "codespell" },
             ["_"] = { "trim_whitespace" }
         },
